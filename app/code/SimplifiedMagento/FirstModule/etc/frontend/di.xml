@@ -21,4 +21,10 @@
             <argument name="size" xsi:type="object">SimplifiedMagento\FirstModule\Model\Big</argument>
         </arguments>
     </type>
+    <type name="SimplifiedMagento\FirstModule\Model\Student">
+        <arguments>
+            <argument name="name" xsi:type="string">Bob</argument>
+            <argument name="size" xsi:type="number">35</argument>
+        </arguments>
+    </type>
 </config>

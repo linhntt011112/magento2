@@ -19,12 +19,13 @@ class HelloWorld extends \Magento\Framework\App\Action\Action
     }
     public function execute()
     {
-        echo $this->pencilInterface->getPencilType();
+        // echo $this->pencilInterface->getPencilType();
         // echo get_class($this->productRepository);
         $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-        $pencil = $objectManager->create('SimplifiedMagento\FirstModule\Model\Pencil');
-        var_dump($pencil);
-        $book = $objectManager->create('SimplifiedMagento\FirstModule\Model\Book');
-        var_dump($book);
+        $student = $objectManager->create('SimplifiedMagento\FirstModule\Model\Student');
+        var_dump($student);
     }
+
+    
+
 }
