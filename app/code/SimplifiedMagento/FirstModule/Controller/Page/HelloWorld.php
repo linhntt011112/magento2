@@ -22,8 +22,8 @@ class HelloWorld extends \Magento\Framework\App\Action\Action
         // echo $this->pencilInterface->getPencilType();
         // echo get_class($this->productRepository);
         $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-        $student = $objectManager->create('SimplifiedMagento\FirstModule\Model\Student');
-        var_dump($student);
+        $pencil = $objectManager->create('SimplifiedMagento\FirstModule\Model\Pencil');
+        var_dump($pencil);
     }
 
     
