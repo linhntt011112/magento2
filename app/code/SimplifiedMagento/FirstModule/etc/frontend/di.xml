@@ -25,6 +25,10 @@
         <arguments>
             <argument name="name" xsi:type="string">Bob</argument>
             <argument name="size" xsi:type="number">35</argument>
+            <argument name="scores" xsi:type="array">
+                <item name="maths" xsi:type="number">100</item>
+                <item name="programming" xsi:type="number">99</item>
+            </argument>
         </arguments>
     </type>
 </config>
