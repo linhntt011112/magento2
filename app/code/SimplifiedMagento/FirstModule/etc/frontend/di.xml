@@ -17,6 +17,9 @@
                 type="SimplifiedMagento\FirstModule\Model\Normal"/>
     <preference for="SimplifiedMagento\FirstModule\Api\Brightness"
                 type="SimplifiedMagento\FirstModule\Model\Medium"/>
+    <type name="Magento\Catalog\Model\Product">
+        <plugin name="before_set_name" type="SimplifiedMagento\FirstModule\Plugin\PluginSolution" sortOrder="10"/>
+    </type>
     
     <type name="SimplifiedMagento\FirstModule\Model\Student">
         <arguments>
