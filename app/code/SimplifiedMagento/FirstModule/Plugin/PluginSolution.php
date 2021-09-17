@@ -7,7 +7,7 @@ class PluginSolution {
         return "Before Plugin ". $name;
     }
 
-    // public function afterGetName(\Magento\Catalog\Model\Product $subject, $result) {
-    //     return $result ." After Plugin";
-    // }
+    public function afterGetName(\Magento\Catalog\Model\Product $subject, $result) {
+        return $result ." After Plugin";
+    }
 }
