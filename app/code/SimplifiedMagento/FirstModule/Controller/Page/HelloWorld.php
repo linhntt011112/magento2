@@ -29,8 +29,8 @@ class HelloWorld extends \Magento\Framework\App\Action\Action
         // var_dump($pencil);
         $product = $this->productFactory->create()->load(1);
         $product->setName("Iphone 6");
-        $productName = $product->getName();
-        echo $productName;
+        $productName = $product->getIdBySku("24-MB01");
+        // echo $productName;
     }
 
     
