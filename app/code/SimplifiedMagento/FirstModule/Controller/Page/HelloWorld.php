@@ -8,6 +8,7 @@ use SimplifiedMagento\FirstModule\Api\PencilInterface;
 use Magento\Catalog\Api\ProductRepositoryInterface;
 use SimplifiedMagento\FirstModule\Model\PencilFactory;
 use Magento\Catalog\Model\ProductFactory;
+use Magento\Framework\Event\ManagerInterface;
 
 class HelloWorld extends \Magento\Framework\App\Action\Action
 {
@@ -15,23 +16,21 @@ class HelloWorld extends \Magento\Framework\App\Action\Action
     protected $productRepository;
     protected $pencilFactory;
     protected $productFactory;
-    public function __construct(Context $context, ProductFactory $productFactory, PencilFactory $pencilFactory, PencilInterface $pencilInterface, ProductRepositoryInterface $productRepository)
+    protected $_eventManager;
+    public function __construct(Context $context, ManagerInterface $_eventManager, ProductFactory $productFactory, PencilFactory $pencilFactory, PencilInterface $pencilInterface, ProductRepositoryInterface $productRepository)
     {
         $this->pencilFactory = $pencilFactory;
         $this->pencilInterface = $pencilInterface;
         $this->productRepository = $productRepository;
         $this->productFactory = $productFactory;
+        $this->_eventManager = $_eventManager;
         parent::__construct($context);
     }
     public function execute()
     {
-        // $pencil = $this->pencilFactory->create(array("name"=>"Bob", "school"=>"International College"));
-        // var_dump($pencil);
-        // $product = $this->productFactory->create()->load(1);
-        // $product->setName("Iphone 6");
-        // $productName = $product->getIdBySku("24-MB01");
-        // echo $productName;
-        echo "Main function"."</br>";
+        $message = new \Magento\Framework\DataObject(array ("greeting" => "Good afternoon"));
+        $this->_eventManager->dispatch('custom_event',['greeting'=>$message]);
+        echo $message->getGreeting();
     }
 
     
