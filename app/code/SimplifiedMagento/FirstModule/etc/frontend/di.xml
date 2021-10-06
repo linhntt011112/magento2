@@ -17,15 +17,21 @@
                 type="SimplifiedMagento\FirstModule\Model\Normal"/>
     <preference for="SimplifiedMagento\FirstModule\Api\Brightness"
                 type="SimplifiedMagento\FirstModule\Model\Medium"/>
-    <type name="SimplifiedMagento\FirstModule\Controller\Page\HelloWorld">
+    <!-- <type name="SimplifiedMagento\FirstModule\Controller\Page\HelloWorld">
         <plugin name="plugin_on_execute" type="SimplifiedMagento\FirstModule\Plugin\PluginSolution" sortOrder="10" disabled="true"/>
         <plugin name="plugin2_on_execute" type="SimplifiedMagento\FirstModule\Plugin\PluginSolution2" sortOrder="20" disabled="true"/>
         <plugin name="plugin3_on_execute" type="SimplifiedMagento\FirstModule\Plugin\PluginSolution3" sortOrder="30" disabled="true"/>
         <arguments>
             <argument name="heavyService" xsi:type="object">SimplifiedMagento\FirstModule\Model\HeavyService\Proxy</argument>
         </arguments>
+    </type> -->
+    <type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="hello_world" xsi:type="object">SimplifiedMagento\FirstModule\Console\Command\HelloWorld</item>
+            </argument>
+        </arguments>
     </type>
-    
     <!-- <type name="SimplifiedMagento\FirstModule\Model\Student">
         <arguments>
             <argument name="name" xsi:type="string">Bob</argument>
